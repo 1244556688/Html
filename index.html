@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>多功能網站選單</title>
+<style>
+body {
+  margin: 0;
+  font-family: "Noto Sans TC", sans-serif;
+  background: linear-gradient(135deg, #3b82f6, #9333ea);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+h1 {
+  margin-bottom: 30px;
+  font-size: 2em;
+}
+.menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+  width: 90%;
+  max-width: 600px;
+}
+a {
+  display: block;
+  padding: 16px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+  backdrop-filter: blur(4px);
+}
+a:hover {
+  background: rgba(255,255,255,0.35);
+  transform: scale(1.05);
+}
+footer {
+  position: absolute;
+  bottom: 20px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+</style>
+</head>
+<body>
+<h1>✨ 多功能網站選單 ✨</h1>
+
+<div class="menu">
+  <a href="about.html">1️⃣ 個人介紹</a>
+  <a href="music.html">2️⃣ 音樂播放器</a>
+  <a href="gallery.html">3️⃣ 照片畫廊</a>
+  <a href="game.html">4️⃣ 小遊戲</a>
+  <a href="blog.html">5️⃣ 部落格</a>
+  <a href="company.html">6️⃣ 公司介紹</a>
+  <a href="fun.html">7️⃣ 互動特效</a>
+</div>
+
+<footer>© 2025 我的多功能網站</footer>
+</body>
+</html>
