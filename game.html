@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>小遊戲：猜數字</title>
+<style>
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  text-align: center;
+  background: #111; color: #fff;
+  padding: 40px;
+}
+input {
+  padding: 10px; font-size: 16px; border-radius: 8px; border: none;
+}
+button {
+  padding: 10px 15px; font-size: 16px; border: none;
+  border-radius: 8px; background: #3b82f6; color: white;
+  margin-left: 10px; cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1>🎯 猜數字遊戲</h1>
+<p>猜一個 1 到 100 的數字！</p>
+<input id="guess" type="number" min="1" max="100">
+<button onclick="checkGuess()">猜！</button>
+<p id="result"></p>
+<p><a href="index.html" style="color:#3b82f6;">⬅️ 回主選單</a></p>
+
+<script>
+let answer = Math.floor(Math.random() * 100) + 1;
+function checkGuess() {
+  let g = parseInt(document.getElementById("guess").value);
+  let result = document.getElementById("result");
+  if (g === answer) {
+    result.textContent = "🎉 恭喜猜中！答案是 " + answer;
+  } else if (g < answer) {
+    result.textContent = "太小了！再試一次～";
+  } else {
+    result.textContent = "太大了！再試一次～";
+  }
+}
+</script>
+</body>
+</html>
