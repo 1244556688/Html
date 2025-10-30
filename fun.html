@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>互動特效</title>
+<style>
+body {
+  margin: 0; overflow: hidden;
+  background: #000; color: white;
+  text-align: center; font-family: "Noto Sans TC", sans-serif;
+}
+canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; }
+h1 { position: relative; z-index: 2; padding-top: 40vh; }
+</style>
+</head>
+<body>
+<h1>🌌 點擊畫面有星星特效 ✨</h1>
+<canvas id="canvas"></canvas>
+<p style="position:relative;z-index:2;"><a href="index.html" style="color:#3b82f6;">⬅️ 回主選單</a></p>
+
+<script>
+const c = document.getElementById("canvas");
+const ctx = c.getContext("2d");
+let stars = [];
+
+function resize(){
+  c.width = innerWidth; c.height = innerHeight;
+}
+resize();
+window.onresize = resize;
+
+function draw(){
+  ctx.clearRect(0,0,c.width,c.height);
+  for (let s of stars){
+    ctx.beginPath();
+    ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+    ctx.fillStyle=s.color;
+    ctx.fill();
+    s.y -= s.speed;
+    s.r *= 0.98;
+  }
+  stars = stars.filter(s => s.r > 0.5);
+  requestAnimationFrame(draw);
+}
+draw();
+
+c.onclick = e=>{
+  for (let i=0;i<20;i++){
+    stars.push({
+      x:e.clientX, y:e.clientY,
+      r:Math.random()*3+2,
+      color:`hsl(${Math.random()*360},100%,70%)`,
+      speed:Math.random()*2+1
+    });
+  }
+};
+</script>
+</body>
+</html>
