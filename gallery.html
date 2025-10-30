@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>照片畫廊</title>
+<style>
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  margin: 0; background: #fafafa; text-align: center;
+}
+h1 { padding: 20px; }
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+  gap: 10px; padding: 10px;
+}
+img {
+  width: 100%; border-radius: 10px; transition: .3s;
+}
+img:hover { transform: scale(1.05); }
+</style>
+</head>
+<body>
+<h1>🖼️ 我的圖片畫廊</h1>
+<div class="gallery">
+  <img src="https://drive.google.com/file/d/12zuQrlBZyNw3PQ2hbPrlX_wxTc05ZjPd/view?usp=drive_link">
+  <img src="https://placekitten.com/301/200">
+  <img src="https://placekitten.com/302/200">
+  <img src="https://placekitten.com/303/200">
+</div>
+<p><a href="index.html">⬅️ 回主選單</a></p>
+</body>
+</html>
+r
